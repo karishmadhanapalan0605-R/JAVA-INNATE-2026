@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter 4 numbers: ");
+        
+        // Initializes a 3x3 ragged array using a mix of hardcoded values and user inputs
+        int[][] m = {
+            {1, 2, 3}, 
+            {4, 5, sc.nextInt()}, 
+            {sc.nextInt(), sc.nextInt(), sc.nextInt()}
+        };
+        
+        System.out.println("The Matrix is:");
+        
+        // Loop to print the 3x3 matrix
+        for (int i = 0; i < 3; i++) {
+            System.out.println(m[i][0] + " " + m[i][1] + " " + m[i][2]);
+        }
+        
+        sc.close(); // Good practice to close the scanner
+    }
+}
