@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Main  {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter array size:");
+        int size = sc.nextInt();
+        int [] numbers = new int[size];
+        System.out.print("Enter" + size + "space-separated numbers:");
+        for (int i = 0; i < size; i++) {
+            numbers[i] = sc.nextInt();
+        }
+        int evenIndexSum = 0, oddIndexSum = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (i % 2 == 0)
+            evenIndexSum += numbers[i];
+            else
+            oddIndexSum += numbers[i];
+        }
+        System.out.println("Even index sum:" + evenIndexSum);
+        System.out.println("odd index sum:" + oddIndexSum);
+        sc.close();
+    }
+}
