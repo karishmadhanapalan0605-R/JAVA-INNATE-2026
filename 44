@@ -1,0 +1,192 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("Iphone", "16 Pro");
+        System.out.println(map); 
+    }
+}
+******************************************
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, String> map1 = new HashMap<>();
+        map1.put("Iphone", "16 Pro");
+
+        HashMap<String, String> map2 = new HashMap<>();
+        map2.putAll(map1);
+        System.out.println(map2);
+    }
+}
+***********************************************************
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("Iphone", "16 Pro");
+        
+        boolean hasKey = map.containsKey("Iphone");
+        System.out.println("Has Iphone? " + hasKey);
+    }
+}
+********************************************************************************
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("Iphone", "16 Pro");
+        
+        String model = map.get("Iphone");
+        System.out.println("Model: " + model);
+    }
+}
+************************************************************************
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("Iphone", "16 Pro");
+        
+        int total = map.size();
+        System.out.println("Total pairs: " + total);
+    }
+}
+****************************************************************************
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, String> map = new HashMap<>();
+        
+        System.out.println("Is empty? " + map.isEmpty());
+    }
+}
+*****************************************************************************************
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("Iphone", "16 Pro");
+        map.put("Samsung", "S24");
+        
+        ArrayList<String> keys = new ArrayList<>(map.keySet());
+        System.out.println("All Keys: " + keys);
+    }
+}
+***************************************************************************
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("Iphone", "16 Pro");
+        map.put("Samsung", "S24");
+        
+        ArrayList<String> values = new ArrayList<>(map.values());
+        System.out.println("All Values: " + values);
+    }
+}
+*****************************************************************
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("Iphone", "16 Pro");
+        
+        ArrayList<Object> entries = new ArrayList<>(map.entrySet());
+        System.out.println("All Entries: " + entries);
+    }
+}
+***************************************************************************
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("Iphone", "16 Pro");
+        
+        map.remove("Iphone");
+        System.out.println(map);
+    }
+}
+********************************************************************
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("Iphone", "16");
+        
+        map.compute("Iphone", (key, oldVal) -> oldVal + " Pro Max");
+        System.out.println(map);
+    }
+}
+******************************************************************
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, String> map = new HashMap<>();
+        
+        map.computeIfAbsent("Iphone", key -> "16 Pro");
+        System.out.println(map);
+    }
+}
+*********************************************************************
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("Iphone", "16");
+        
+        map.merge("Iphone", " Pro", (oldVal, newVal) -> oldVal + newVal);
+        System.out.println(map);
+    }
+}
+**************************************************************************
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, String> map1 = new HashMap<>();
+        map1.put("Iphone", "16 Pro");
+        
+        HashMap<String, String> map2 = (HashMap<String, String>) map1.clone();
+        System.out.println("Cloned map: " + map2);
+    }
+}
+***********************************************************************
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("Iphone", "16 Pro");
+        
+        map.clear();
+        System.out.println("Map content: " + map);
+    }
+}
