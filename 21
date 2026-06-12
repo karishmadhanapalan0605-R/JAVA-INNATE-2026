@@ -1,0 +1,15 @@
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {2, 4, 6, 8, 10};
+
+        // Nested loops to find pairs of elements
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                // Ensures an element is not paired with itself
+                if (i != j) {
+                    System.out.println("pair: [" + arr[i] + "," + arr[j] + "]");
+                }
+            }
+        }
+    }
+}
