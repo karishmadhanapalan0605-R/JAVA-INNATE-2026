@@ -1,0 +1,292 @@
+//add()
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+        
+        System.out.println(list); // [Apple, Banana]
+    }
+}
+*********************************************************
+//addAll()
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list1 = new ArrayList<>();
+        list1.add("Apple");
+
+        ArrayList<String> list2 = new ArrayList<>();
+        list2.add("Banana");
+        list2.add("Cherry");
+
+        list1.addAll(list2); // Merges list2 into list1
+        System.out.println(list1); // [Apple, Banana, Cherry]
+    }
+}
+********************************************************
+//clear()
+import java.util.ArrayList;
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+
+        list.clear(); // Wipes the list clean
+        System.out.println(list); // []
+    }
+}
+*******************************************************
+//clone()
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> original = new ArrayList<>();
+        original.add("Apple");
+
+        // Cast the clone back to an ArrayList
+        ArrayList<String> copy = (ArrayList<String>) original.clone();
+        
+        System.out.println(copy); // [Apple]
+    }
+}
+******************************************************
+//contains()
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Apple");
+
+        System.out.println(list.contains("Apple"));  // true
+        System.out.println(list.contains("Banana")); // false
+    }
+}
+******************************************************
+//ensureCapacity()
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        
+        list.ensureCapacity(100); // Prepares internal storage for 100 items
+        list.add("Apple");
+        
+        System.out.println(list); // [Apple]
+    }
+}
+********************************************************
+//forEach()
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+
+        // Prints each element on a new line
+        list.forEach(item -> System.out.println(item));
+    }
+}
+********************************************************
+//indexOf()
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Apple");
+
+        System.out.println(list.indexOf("Apple")); // 0 (Finds the first one)
+    }
+}
+*******************************************************
+//isEmpty()
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        System.out.println(list.isEmpty()); // true
+
+        list.add("Apple");
+        System.out.println(list.isEmpty()); // false
+    }
+}
+*********************************************************
+//lastIndexOf()
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Apple");
+
+        System.out.println(list.lastIndexOf("Apple")); // 2 (Finds the last one)
+    }
+}
+*************************************************************
+//remove()
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Cherry");
+
+        list.remove(0);         // Removes "Apple" at index 0
+        list.remove("Banana");   // Removes "Banana" by name
+        
+        System.out.println(list); // [Cherry]
+    }
+}
+*************************************************************
+//removeAll()
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Apple"); list.add("Banana"); list.add("Cherry");
+
+        ArrayList<String> trash = new ArrayList<>();
+        trash.add("Apple");
+        trash.add("Cherry");
+
+        list.removeAll(trash); // Deletes both Apple and Cherry
+        System.out.println(list); // [Banana]
+    }
+}
+***************************************************************
+//removeIf()
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Apricot");
+
+        // Removes any fruit that starts with the letter "A"
+        list.removeIf(fruit -> fruit.startsWith("A"));
+        
+        System.out.println(list); // [Banana]
+    }
+}
+***************************************************************
+//removeRange()
+import java.util.ArrayList;
+
+class MyList extends ArrayList<String> {
+    public void clearRange(int start, int end) {
+        this.removeRange(start, end); // Unlocks the protected method
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyList list = new MyList();
+        list.add("0"); list.add("1"); list.add("2"); list.add("3");
+
+        list.clearRange(1, 3); // Deletes index 1 and 2
+        System.out.println(list); // [0, 3]
+    }
+}
+****************************************************************
+//retainAll()
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Apple"); list.add("Banana"); list.add("Cherry");
+
+        ArrayList<String> keep = new ArrayList<>();
+        keep.add("Apple");
+        keep.add("Cherry");
+
+        list.retainAll(keep); // Keeps Apple and Cherry, throws away Banana
+        System.out.println(list); // [Apple, Cherry]
+    }
+}
+**************************************************************
+//set()
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+
+        // Change "Banana" (index 1) to "Mango"
+        list.set(1, "Mango"); 
+        
+        System.out.println(list); // [Apple, Mango]
+    }
+}
+***************************************************************
+//size()
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+
+        int totalItems = list.size();
+        
+        System.out.println("Total count: " + totalItems); // Total count: 2
+    }
+}
+******************************************************************
+//toArray()
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+
+        // Convert to a regular String array
+        String[] normalArray = list.toArray(new String[0]);
+        
+        // Print using standard array index syntax
+        System.out.println(normalArray[0]); // Apple
+        System.out.println(normalArray[1]); // Banana
+    }
+}
+********************************************************************
+//trimToSize()
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        // Creates a list with a hidden internal storage buffer of 50 spaces
+        ArrayList<String> list = new ArrayList<>(50); 
+        list.add("Apple");
+        list.add("Banana");
+
+        // Trims the hidden storage capacity from 50 spaces down to exactly 2 spaces
+        list.trimToSize(); 
+        
+        System.out.println(list); // [Apple, Banana]
+    }
+}
