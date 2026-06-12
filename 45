@@ -1,0 +1,12 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, ArrayList<String>> productMap = new HashMap<>();
+        ArrayList<String> iphoneModels = new ArrayList<>();
+        iphoneModels.add("iPhone 15");
+        iphoneModels.add("iPhone 16 Pro");
+        productMap.put("Iphone", iphoneModels);
+        System.out.println("iPhone Models: " + productMap.get("Iphone"));
+    }
+}
