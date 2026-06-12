@@ -1,0 +1,15 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Integer> x = new ArrayList<>();
+        x.add(10); x.add(20);
+        ArrayList<Integer> y = new ArrayList<>();
+        y.add(30); y.add(40);
+        x.set(1,50);
+        y.set(0,60);
+        x.remove(0);
+        y.remove(0);
+        x.addAll(y);
+        System.out.print(x);
+    }
+}
